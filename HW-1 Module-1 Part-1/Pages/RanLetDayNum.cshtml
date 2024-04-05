@@ -1,0 +1,22 @@
+﻿@page
+@model HW_1_Module_1_Part_1.Pages.RanLetDayNumModel
+@{
+    ViewData["Title"] = "Random Letter and Day Number";
+}
+<div>
+    <h1>Random Letter and Day Number</h1>
+    <p>Day number in the year: <span id="dayNumber"></span></p>
+    <p>Random letter: <span id="randomLetter"></span></p>
+</div>
+@section Scripts 
+{
+    <script>
+        var today = new Date();
+        var startOfYear = new Date(today.getFullYear(), 0, 0);
+        var dayNumber = Math.ceil((today - startOfYear) / (24 * 60 * 60 * 1000));
+        document.getElementById("dayNumber").textContent = dayNumber;
+        var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var randomLetter = letters.charAt(Math.floor(Math.random() * letters.length));
+        document.getElementById("randomLetter").textContent = randomLetter;
+    </script>
+}

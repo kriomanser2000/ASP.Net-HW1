@@ -1,0 +1,19 @@
+﻿@page
+@model HW_1_Module_1_Part_1.Pages.CountrysModel
+@{
+    ViewData["Title"] = "Countries";
+}
+<div>
+    <h1>List of Countries</h1>
+    <ul class="country-list">
+        @foreach (var country in Model.Countries)
+        {
+            <li>
+                <h2>@country.Name</h2>
+                <p><strong>Capital:</strong> @country.Capital</p>
+                <p><strong>Population:</strong> @country.Population.ToString("N0")</p>
+                <p><strong>Area:</strong> @country.Area.ToString("N0") km²</p>
+            </li>
+        }
+    </ul>
+</div>

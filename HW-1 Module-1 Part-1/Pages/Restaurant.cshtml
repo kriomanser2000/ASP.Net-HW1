@@ -1,0 +1,19 @@
+﻿@page
+@model HW_1_Module_1_Part_1.Pages.RestaurantModel
+@{
+    ViewData["Title"] = "Restaurant Information";
+}
+<div>
+    <h1>@Model.Restaurant.Name</h1>
+    <p><strong>Address: </strong> @Model.Restaurant.Address</p>
+    <p><strong>Phone Number: </strong> @Model.Restaurant.PhoneNumber</p>
+    <p><strong>Description :</strong> @Model.Restaurant.Description</p>
+    <p><strong>Cuisines: </strong> @string.Join(", ", Model.Restaurant.Cuisines)</p>
+    <p><strong>Opening Hours: </strong></p>
+    <ul>
+        @foreach (var hour in Model.Restaurant.OpeningHours)
+        {
+            <li>@hour</li>
+        }
+    </ul>
+</div>
